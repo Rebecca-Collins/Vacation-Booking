@@ -1,0 +1,125 @@
+@use '../../styles/color' as *;
+@use '../../styles/responsive' as *;
+
+.header{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: $white;
+    width: 100%;
+    padding: 1rem;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(2, 15, 29, 0.242);
+}
+
+.logo{
+    color: $black;
+    font-weight: 600;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+
+    
+}
+
+.icon{
+    font-size: 25px;
+    color: $primaryColor;
+    transform: translate(5px);
+
+    &:hover{
+        color: $secondaryColor;
+    }
+}
+
+.navbar{
+    // @include tablet{
+        position: absolute;
+        background: $whiteColorDeam;
+        height: max-content;
+        width: 80%;
+        border-radius: 1rem;
+        top: -500rem;
+        left: 50%;
+        padding: 1rem; 
+        transform: translate(-50%);
+        z-index: 2000;
+        box-shadow: 0 2px 4px rgba(2, 15, 29, 0.904);
+        transition: .5s ease-in-out;
+    // }
+}
+
+.activeNavbar{
+    top: 7rem;
+
+}
+
+.navList{
+    // @include tablet{
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        margin: auto;
+        padding: .5rem 0;
+    // }
+}
+
+.navItem{
+    // @include tablet{
+        padding: .5rem 0;
+    // }
+}
+
+.navLink{
+    // @include tablet{
+        color: $textColor;
+        font-size: .9rem;
+        font-weight: 600;
+    // }
+   
+}
+
+.navLink:hover{
+    color: $primaryColor;
+}
+
+.btn{
+    // @include tablet{
+        margin-top: 1rem;
+    // }
+}
+
+.btnLink{
+    // @include tablet{
+        font-weight: 600;
+        color: $white
+    // }
+}
+
+.closeNavbar{
+    // @include tablet{
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+        // color: $primaryColor;
+       
+    // }
+}
+
+.closeNavbar:hover{
+    color: green;
+}
+
+.toggleNavbar{
+    .icon{
+        font-size: 25px;
+        color: $primaryColor;
+
+    }
+
+    &:hover.icon{
+color: $secondaryColor;
+
+    }
+}
