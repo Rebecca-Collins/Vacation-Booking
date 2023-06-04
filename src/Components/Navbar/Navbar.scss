@@ -1,6 +1,8 @@
 @use '../../styles/color' as *;
 @use '../../styles/responsive' as *;
 
+// Fix width @ 1280 
+
 .header{
     position: fixed;
     display: flex;
@@ -11,6 +13,16 @@
     padding: 1rem;
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(2, 15, 29, 0.242);
+
+    @include tablet{
+        padding: 1.5rem 2rem;
+        background: $whiteColorDeam;
+    }
+
+    @include desktop{
+        padding: 1rem 0.5rem;
+    //    padding: 1rem 7.5rem;
+    }
 }
 
 .logo{
@@ -47,11 +59,17 @@
         z-index: 2000;
         box-shadow: 0 2px 4px rgba(2, 15, 29, 0.904);
         transition: .5s ease-in-out;
+
+
+       
     // }
 }
 
 .activeNavbar{
     top: 7rem;
+   @include tablet{
+    display: none;
+   }
 
 }
 
@@ -63,12 +81,22 @@
         margin: auto;
         padding: .5rem 0;
     // }
+    // @include tablet{
+    //         display: flex;
+    //         align-items: center;
+    //         justify-content: center;
+    //         flex-direction: row;
+    // }
 }
 
 .navItem{
     // @include tablet{
         padding: .5rem 0;
     // }
+
+    @include tablet{
+            color: $textColor;
+    }
 }
 
 .navLink{
@@ -105,6 +133,10 @@
         // color: $primaryColor;
        
     // }
+
+    @include tablet{
+        display: none;
+    }
 }
 
 .closeNavbar:hover{
@@ -122,4 +154,57 @@
 color: $secondaryColor;
 
     }
+
+    @include tablet{
+        display: none;
+    }
 }
+
+.nav-tablet{
+    display: none;
+
+    @include tablet{
+        display: block;
+    }
+
+    &__list{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+
+        @include desktop{
+           
+        }
+    }
+
+    &__item{
+        padding: 0 0.7rem;
+    }
+
+   &__link{
+    color: $textColor;
+    padding: 0 0.45rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    &:hover{
+        color: $primaryColor;
+    }
+   }
+
+   &__btn{
+    margin-left: 1rem;
+    padding: .6rem 1.5rem;
+    background: $gradientColor;
+    border-radius: 3rem;
+    border: none;
+    outline: none;
+   }
+
+   &__btn-link{
+    color: $white;
+    font-weight: 500;
+   }
+}
+

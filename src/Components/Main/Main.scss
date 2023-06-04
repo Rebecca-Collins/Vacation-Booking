@@ -52,6 +52,10 @@
     box-shadow: 1 4px 4px rgba(85, 85, 114, 0.549);
     transition: 0.3s ease;
   }
+  @include desktop{
+      width: 80%;
+      margin: auto;
+  }
 }
 
 .imgageDiv {

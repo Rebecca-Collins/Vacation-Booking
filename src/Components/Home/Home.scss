@@ -10,6 +10,24 @@
     justify-content: center;
     margin: auto;
 
+    @include large{
+        height: 70vh
+    }
+
+    @include desktop{
+        height: 90vh;
+    }
+
+    &__video{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        object-fit: cover;
+    
+    }
+
     &__Content{
         width: 100%;
         height: max-content;
@@ -22,20 +40,50 @@
         margin: auto;
         color: $white;
         z-index: 100;
+
+        @include desktop{
+            padding-left: 0;
+            padding-right: 0;
+        }
     }
 
     &__textDiv{
         padding: 2rem 0;
+
+        @include desktop{
+            width: 80%;
+            margin: auto;
+        }
     }
 
     &__smallText{
         font-size: 13px;
         text-transform: uppercase;
+
+        @include tablet{
+            font-size: 16px;
+        }
     }
 
-    &__homeTitle{
+    &__title{
         position: relative;
         font-size: 1.8rem;
+
+        @include tablet{
+            font-size: 2.3rem;
+            width: max-content;
+
+            &::after{
+                position: absolute;
+                content: "";
+                background: $secondaryColor;
+                height: 4px;
+                width: 125px;
+                right: 0px;
+                bottom: 1px;
+                z-index: -1;
+            }
+        }
     }
 
 
@@ -52,22 +100,28 @@
 
 }
 
-.home__video{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    bottom: 0;
-    object-fit: cover;
-
-}
-
 .cardDiv{
     position: relative;
     padding: 2rem 1rem;
     background-color: $white;
     border-radius: 10px;
     gap: 1rem;
+
+    @include mobile{
+        padding: 2rem 1rem;
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    @include tablet{
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    @include desktop{
+        padding: 2rem 1rem;
+        grid-template-columns: repeat(3,1fr);
+        // width: 80%;
+        // margin: auto;
+    }
 
 }
 
@@ -96,9 +150,13 @@ label{
     background-color: $inputColor;
     border-radius: 3rem;
 
+    @include desktop{
+        margin-bottom: 1rem;
+    }
+
 }
 
-input{
+.home__input{
     background: none;
     border: none;
     outline: none;
@@ -140,6 +198,11 @@ input{
         background-color: $primaryColor;
     }
 
+    @include desktop{
+        bottom: -1rem;
+        padding: 8px 1rem;
+    }
+
    
 
     
@@ -147,6 +210,10 @@ input{
 
 .span{
     font-size: 13px;
+
+    @include desktop{
+        font-size: 17px;
+    }
 }
 
 .filter-icon{

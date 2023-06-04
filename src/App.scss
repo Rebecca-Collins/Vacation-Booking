@@ -1,5 +1,5 @@
 @use "../src/styles/color" as *;
-
+@use "../src/styles/responsive" as*;
 *,
 *::after,
 *::before {
@@ -7,6 +7,14 @@
     margin: 0;
     padding: 0;
 }
+// MAKE MIXINS FOR ALL OF THIS.
+// html{
+//     scroll-behavior: smooth;
+// }
+
+// body{
+//     scroll-behavior: smooth;
+// }
 
 a{
     text-decoration: none;
@@ -23,6 +31,17 @@ li{
 .container{
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+
+    @include desktop{
+        width: 80% !important;
+        margin: auto !important;
+    }
+}
+
+.section{
+    @include desktop{
+        padding: 6rem 0 4rem;
+    }
 }
 
 .icon{
@@ -40,6 +59,7 @@ li{
     align-items: center;
 }
 
+// change- make mixins 
 .btn{
     padding: .6rem 1.5rem;
     background: $gradientColor;
@@ -49,6 +69,7 @@ li{
     
 }
 
+// change
 .btn a {
     color: $white;
     font-weight: 500;
@@ -59,15 +80,21 @@ li{
     cursor: pointer;
 }
 
+// change 
 img, video{
     width: 100%;
     height: auto;
 }
 
+// change this
 input{
     font-size: 100%;
 }
 
 body{
     background-color: $bodyColor;
+
+    @include desktop{
+        zoom: 1.7;
+    }
 }
